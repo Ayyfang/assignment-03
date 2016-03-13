@@ -35,7 +35,56 @@ T maximum(T arr[ ], int size)
 	}
 	return largest;
 }
+//4
 
+int gcd(int a, int b)
+{
+	if (a <= 0)
+		a = -a;
+	if (b <= 0)
+		b = -b;
+	if (a == 0)
+		return b;
+	if (b == 0)
+		return a;
+
+	if (a > b)
+		return gcd(a - b, b);
+	else if (b > a)
+		return gcd(a, b - a);
+}
+
+int fib(int n) {
+	if (n == 1) return 1;
+	if (n == 2)return 2;
+
+	return fib(n - 1) + fib(n - 2);
+}
+
+int pow(int x, int y) {
+	if (y < 0)throw "negative exponent \n";
+
+	if (y == 0) return 1;
+
+	return x* pow(x, y - 1);
+
+}
+int tri(int n) {
+	if (n <= 0)
+		throw "negative number \n";
+
+	if (n == 0)
+		cout << endl;
+	else {
+
+		for (int a = 1; a<= n; a++) {
+			for (int b = 1; b <= a; b++) {
+				cout << " * ";
+			}
+			cout << endl;
+		}
+	}
+}
 
 int main() {
 	//exception
@@ -72,6 +121,13 @@ int main() {
 	std::swap(a, b);
 	cout << a << b << endl;
 
+	cout << gcd(5, 4) << endl;
+
+	cout << fib(10) << endl;
+
+	cout << pow(2, 6) << endl;
+
+	cout << tri(5) << endl;
 
 
 
